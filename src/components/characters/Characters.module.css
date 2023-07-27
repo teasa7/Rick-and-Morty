@@ -1,0 +1,12 @@
+.block_characters {
+  padding: 30px
+}
+
+.characters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  justify-content: space-between;
+  
+}

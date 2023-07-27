@@ -1,0 +1,39 @@
+.block {
+  background-color: #191a2c;
+  width: 15%;
+  border-radius: 20px;
+  padding: 30px;
+  color: white;
+}
+
+.img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  max-height: 420px;
+}
+
+.name {
+  font-family: 'Tektur', cursive;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.description {
+  margin-top: auto;
+  flex-direction: column;
+}
+
+.description p {
+  margin: 5px 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
