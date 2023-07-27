@@ -1,33 +1,24 @@
-// import {charactersAPI} from "../api/api";
+// import { useState, useEffect } from "react"
+// import { getCharacters } from "./../api/api"
 
-// const SET_CHARACTERS_DATA = 'SET-CHARACTERS-DATA'
+// const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
 
 // let initialState = {
-//   characters: []
+//   currentPage: 1
 // }
 
 // const charactersReducer = (state = initialState, action) => {
 //   switch(action.type) { 
-//     case SET_CHARACTERS_DATA: 
+//     case SET_CURRENT_PAGE: 
 //       return {
 //         ...state,
-//         ...action.data
+//         currentPage: action.currentPage
 //       }
 //     default:
 //       return state
 //   }
 // }
 
-// export let setCharactersData = (id, name, status, gender) => ({ type: SET_CHARACTERS_DATA, data: {id, name, status, gender}})
-
-// export const getCharactersData = () => {
-//   return (dispatch) => {
-//     charactersAPI.me().then(response => {
-//       let {id, name, status, gender} = response.data
-//       dispatch(setCharactersData(id, name, status, gender))
-//     })
-//   }
-// }
-
+// export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 
 // export default charactersReducer

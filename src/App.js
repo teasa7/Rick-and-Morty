@@ -1,14 +1,12 @@
 import React from 'react';
 import "./App.css"
-import CharactersContainer from "./components/characters/CharactersContainer";
-import { useState, useEffect } from "react"
-import { getCharacters } from "./api/api"
+import Characters from "./components/characters/Characters";
 
 function App(props) {
   return (
     <div className="app">
       <h1 className="title">Rick and Morty</h1>
-      <CharactersContainer />
+      <Characters />
     </div>
   );
 }
