@@ -31,7 +31,15 @@ function App(props) {
     const data = await getCharactersData(page, name, status, type, gender, species)
 
     if(data === "Error") {
-      setError("Error")
+      const dataAgain = await getCharactersData("1", name, status, type, gender, species)
+      if(dataAgain === "Error") {
+        setError("Error")
+      }
+      else {
+        setCharacter(dataAgain.data.results)
+        setPages(dataAgain.data.info.pages)
+        setError(null)
+      }
     }
     else {
       setCharacter(data.data.results)

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 let baseURL
+
 export const getCharactersData = async (page, name, status, type, gender, species) => {
   baseURL = 'https://rickandmortyapi.com/api/character/' + `?page=${page}`;
   
@@ -9,13 +10,13 @@ export const getCharactersData = async (page, name, status, type, gender, specie
   if(type) baseURL = baseURL + `&type=${type}`
   if(gender) baseURL = baseURL + `&gender=${gender}`
   if(species) baseURL = baseURL + `&species=${species}`
-  
+
   return await axios.get(baseURL).then(
     function (response) {
       return response
     }
   ).catch(
-    function (error) {
+    function () {
       return "Error"
     }
   )
