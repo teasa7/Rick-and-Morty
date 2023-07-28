@@ -15,6 +15,7 @@
 .info {
   display: flex;
   flex-direction: column;
+  height: 350px;
 }
 
 .name {
@@ -47,11 +48,23 @@
 @media (max-width: 620px) {
   .block {
     width: auto;
+    height: 400px;
   }
   .info {
     display: flex;
     flex-direction: column;
     height: auto;
-    max-height: 700px;
+  }
+}
+@media (max-width: 450px) {
+  .block {
+    width: auto;
+    height: 370px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    height: 250px;
   }
 }
