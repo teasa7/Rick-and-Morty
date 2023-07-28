@@ -7,6 +7,7 @@ import Filtration from "./components/characters/FIltration"
 
 function App(props) {  
   const [characters, setCharacter] = useState([])
+  const [error, setError] = useState(null)
 
   // Pagination
   const [countPages, setPages] = useState([])
@@ -21,17 +22,22 @@ function App(props) {
 
 
   useEffect(() => {
-    getData(currentPage, name, status, type, gender, species, countPages, )
+    getData(currentPage, name, status, type, gender, species)
   }, [currentPage, name, status, type, gender, species])
 
-  const getData = async(page) => {
-    const data = await getCharactersData(currentPage, name, status, type, gender, species, countPages)
-    if(data.data.info.pages < currentPage) {
-      setСurrentPage(1)
-    }
-    setCharacter(data.data.results)
-    setPages(data.data.info.pages)  
+  
 
+  const getData = async(page) => {
+    const data = await getCharactersData(page, name, status, type, gender, species)
+
+    if(data === "Error") {
+      setError("Error")
+    }
+    else {
+      setCharacter(data.data.results)
+      setPages(data.data.info.pages)
+      setError(null)
+    } 
   }
 
   let pages = []
@@ -69,13 +75,14 @@ function App(props) {
     setGender(null)
     setType(null)
     setSpecies(null)
+    setError(null)
   } 
 
   return (
     <div className="app">
       <h1 className="title">Rick and Morty</h1>
       <Filtration getName={getName} getStatus={getStatus} getGender={getGender} getType={getType} getSpecies={getSpecies} reset={reset}/>
-      <Characters characters={characters}/>
+      <Characters characters={characters} error={error} />
       <Pagination pages={pages} currentPage={currentPage} paginate={paginate}/>
     </div>
   )

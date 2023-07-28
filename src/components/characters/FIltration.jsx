@@ -32,11 +32,11 @@ const Filtration = (props) => {
     <div className={styles.block_filter}>
       <div className={styles.filter}>
         <div className={styles.item}>
-          <label for="name">Name</label>
+          <label htmlFor="name">Name</label>
           <input id="name" ref={filterName} className={styles.input} />
         </div>
         <div className={styles.item}>
-          <label for="status">Status</label>
+          <label htmlFor="status">Status</label>
           <select id='status' ref={filterStatus} className={styles.select}>
             <option value=""></option>
             <option value="Alive">Alive</option>
@@ -45,15 +45,15 @@ const Filtration = (props) => {
           </select>
         </div>
         <div className={styles.item}>
-          <label for="type">Type</label>
+          <label htmlFor="type">Type</label>
           <input id="type" ref={filterType} className={styles.input} />
         </div>
         <div className={styles.item}>
-          <label for="species">Species</label>
+          <label htmlFor="species">Species</label>
           <input id="species" ref={filterSpecies} className={styles.input} />
         </div>
         <div className={styles.item}>
-          <label for="gender">Gender</label>
+          <label htmlFor="gender">Gender</label>
           <select id='gender' ref={filterGender} className={styles.select}>
             <option value=""></option>
             <option value="Female">Female</option>

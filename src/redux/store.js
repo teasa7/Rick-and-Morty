@@ -1,12 +1,6 @@
 import thunk from "redux-thunk"
-import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
-import charactersReducer from "./charactersReducer";
+import { applyMiddleware, legacy_createStore } from "redux";
 
-
-let reducers = combineReducers({
-  charactersPage: charactersReducer
-});
-
-let store = legacy_createStore(reducers, applyMiddleware(thunk));
+let store = legacy_createStore(applyMiddleware(thunk));
 
 export default store;
